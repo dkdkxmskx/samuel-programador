@@ -1,0 +1,733 @@
+/*1-Crie um banco de dados chamado Livraria. Dentro dele, crie três tabelas: 
+Livros (livro, titulo, preco, autor, editora), Autores (autor, nome, 
+nacionalidade) e Editoras (editora, nome, telefone).*/
+
+
+#Criando banco de dados livraria
+create database livraria
+	default character set utf8mb4
+    default collate utf8mb8_general_ci;
+    
+#Selecionando o banco de dados livraria
+use livraria;
+
+#Criando a tabela livro
+create table livros(
+id int not null auto_increment,
+    livro varchar(100),
+    titulo varchar(30),
+    preco decimal (5,2),
+    autor varchar(30),
+    primary key (id)
+)default charset=UTF8;
+
+/*2-Crie um banco de dados chamado PetShop. Crie três tabelas: 
+Animais (animal, nome, especie, idade, cliente), 
+Clientes (cliente, nome, telefone) 
+e Servicos (servico, descricao, preco).*/
+
+#Criando banco de dados PetShop
+create database PetShop
+	default character set utf8mb4
+    default collate utf8mb4_general_ci;
+    
+#Selecionando o banco de dados PetShop
+use PetShop;
+
+#Criando a tabela animais
+create table animais (
+id int not null auto_increment,
+animal varchar(30) not null,
+nome varchar(30) not null,
+especie varchar(30) not null,
+idade date,
+cliente varchar(30) not null,
+primary key (id)
+) default charset = utf8mb4
+collate = utf8mb4_general_ci;
+
+
+
+#Criando a tabela clientes
+create table clientes(
+cliente varchar(30),
+nome varchar(30) not null,
+telefone varchar(30) 
+) default charset = utf8mb4
+collate = utf8mb4_general_ci;
+
+#Criando a tabela servicos
+create table servicos(
+  id int not null auto_increment,
+  servico varchar(30),
+  descricao varchar(30) not null,
+  preco float,
+  primary key (id)
+) default charset utf8mb4
+collate = utf8mb4_general_ci;
+
+/*3-Crie um banco de dados chamado EscolaIdiomas. Crie três tabelas: 
+Alunos (aluno, nome, email), Professores (professor, nome, 
+especialidade) e Cursos (curso, nome, carga_horaria).*/
+
+create database escolaidiomas
+ default character set utf8mb4
+ default collate utf8mb4_general_ci;
+ 
+ use escolaidiomas;
+ 
+ create table alunos(
+      id int not null auto_increment,
+      aluno varchar(30),
+      nome varchar(30) not null,
+      email varchar (30),
+      primary key (id)
+ ) default charset utf8mb4
+ collate = utf8mb4_general_ci;
+ 
+create table professores(
+      id int not null auto_increment,
+      professor varchar(30),
+      nome varchar(30) not null,
+      especialidade varchar(30),
+      genero enum ('M','F'),
+      primary key (id)
+)default charset utf8mb4
+collate = utf8mb4_general_ci;
+
+create table cursos(
+	id INT not null AUTO_INCREMENT,
+    curso VARCHAR(30),
+    nome VARCHAR(30),
+    carga_horaria INT,
+    PRIMARY KEY (id)
+ )default charset = utf8mb4   
+collate = utf8mb4_general_ci; 
+
+/* 4-Crie um banco de dados chamado Academia. Crie três tabelas: Alunos 
+(aluno, nome, idade), Planos (plano, descricao, preco) e Instrutores 
+(instrutor, nome, especialidade).*/
+
+create database academia
+default character set utf8mb4
+ default collate utf8mb4_general_ci;
+
+create table aluno(
+      id int not null auto_increment,
+      aluno varchar(30) not null,
+      nome varchar(30) not null,
+      email varchar (30),
+      primary key (id)
+ ) default charset utf8mb4
+ collate = utf8mb4_general_ci;
+ 
+ create table planos(
+	id int not null auto_increment,
+   planos VARCHAR(30),
+   descricao VARCHAR(30),
+    preco INT,
+    PRIMARY KEY (id)
+ )default charset = utf8mb4   
+collate = utf8mb4_general_ci; 
+
+create table instrutores(
+	id int not null auto_increment,
+   instrutor VARCHAR(30),
+   nome VARCHAR(30),
+    expecialidade INT,
+    PRIMARY KEY (id)
+ )default charset = utf8mb4   
+collate = utf8mb4_general_ci; 
+
+/*5-Crie um banco de dados chamado Hospital. Crie três tabelas: Pacientes 
+(paciente, 
+nome, data_nascimento), Medicos (medico, nome, 
+especialidade) e Consultas (consulta, paciente, medico, data_consulta).*/ 
+
+create database hospital
+default character set utf8mb4
+ default collate utf8mb4_general_ci;
+ 
+ create table pacientes(
+   id int not null auto_increment,
+   paciente VARCHAR(30),
+   nome VARCHAR(30),
+   data_nascimento INT,
+    PRIMARY KEY (id)
+ )default charset = utf8mb4   
+collate = utf8mb4_general_ci; 
+
+create table medicos(
+   id int not null auto_increment,
+   medico VARCHAR(30),
+   nome VARCHAR(30),
+   expecialidade INT,
+    PRIMARY KEY (id)
+ )default charset = utf8mb4   
+collate = utf8mb4_general_ci; 
+
+create table consulta(
+   id int not null auto_increment,
+   consulta VARCHAR(30),
+   paciente VARCHAR(30),
+   medico VARCHAR(30),
+   data_consulta date,
+    PRIMARY KEY (id)
+ )default charset = utf8mb4   
+collate = utf8mb4_general_ci; 
+
+/*6-Crie um banco de dados chamado Supermercado. Crie três tabelas: 
+Clientes (cliente, nome, telefone), Produtos (produto, nome, preco) e 
+Vendas (venda, cliente, produto, data_venda).*/
+ 
+ create database supermercado
+default character set utf8mb4
+ default collate utf8mb4_general_ci;
+    
+    create table clientes(
+   id int not null auto_increment,
+   cliente VARCHAR(30),
+   nome VARCHAR(30),
+   telefone INT,
+    PRIMARY KEY (id)
+ )default charset = utf8mb4   
+collate = utf8mb4_general_ci; 
+
+create table produtos(
+   id int not null auto_increment,
+   produto VARCHAR(30),
+   nome VARCHAR(30),
+   preco INT,
+    PRIMARY KEY (id)
+ )default charset = utf8mb4   
+collate = utf8mb4_general_ci; 
+      
+  create table vendas(
+   id int not null auto_increment,
+   venda VARCHAR(30),
+   cliente VARCHAR(30),
+   produto VARCHAR(30),
+   data_venda date,
+    PRIMARY KEY (id)
+ )default charset = utf8mb4   
+collate = utf8mb4_general_ci; 
+
+/*7-Crie um banco de dados chamado LojaRoupas. Crie três tabelas: 
+Produtos (produto, nome, preco, quantidade_estoque), Fornecedores 
+(fornecedor, nome, telefone) e Estoque (estoque, produto, quantidade).*/ 
+
+create database lojaroupa
+default character set utf8mb4
+ default collate utf8mb4_general_ci;
+ 
+ use lojaroupa;
+ 
+ create table produtos(
+   id int not null auto_increment,
+   produto VARCHAR(30),
+   nome VARCHAR(30),
+   preco VARCHAR(30),
+   quantidade_estoque varchar(30),
+    PRIMARY KEY (id)
+ )default charset = utf8mb4   
+collate = utf8mb4_general_ci; 
+
+create table fornecedor(
+   id int not null auto_increment,
+   fornecedor VARCHAR(30),
+   nome VARCHAR(30),
+   telefone INT,
+    PRIMARY KEY (id)
+ )default charset = utf8mb4   
+collate = utf8mb4_general_ci; 
+
+create table estoque(
+   id int not null auto_increment,
+   estoque VARCHAR(30),
+   produto VARCHAR(30),
+   quantidade INT,
+    PRIMARY KEY (id)
+ )default charset = utf8mb4   
+collate = utf8mb4_general_ci; 
+
+/*8-Crie um banco de dados chamado Padaria. Crie três tabelas: Produtos 
+(produto, nome, preco), Funcionarios (funcionario, nome, funcao) e 
+Vendas (venda, produto, funcionario, data_venda). */
+
+create database padaria
+default character set utf8mb4
+ default collate utf8mb4_general_ci;
+ 
+  use padaria;
+
+
+create table produtos(
+   id int not null auto_increment,
+   produto VARCHAR(30),
+   nome VARCHAR(30),
+   preco VARCHAR(30),
+   quantidade_estoque varchar(30),
+    PRIMARY KEY (id)
+ )default charset = utf8mb4   
+collate = utf8mb4_general_ci; 
+
+create table funcionarios(
+   id int not null auto_increment,
+   funcionario VARCHAR(30),
+   nome VARCHAR(30),
+   funcao VARCHAR(30),
+    PRIMARY KEY (id)
+ )default charset = utf8mb4   
+collate = utf8mb4_general_ci;
+
+ create table produtos(
+   id int not null auto_increment,
+   produto VARCHAR(30),
+   nome VARCHAR(30),
+   preco VARCHAR(30),
+    PRIMARY KEY (id)
+ )default charset = utf8mb4   
+collate = utf8mb4_general_ci;
+
+/*9-Crie um banco de dados chamado Farmacia. Crie três tabelas: Produtos 
+(produto, nome, preco), Clientes (cliente, nome, telefone) e Vendas 
+(venda, cliente, produto, data_venda).*/
+
+create database farmacia
+default character set utf8mb4
+ default collate utf8mb4_general_ci;
+ 
+ use farmacia;
+ 
+ create table produtos(
+   id int not null auto_increment,
+   produto VARCHAR(30),
+   nome VARCHAR(30),
+   preco VARCHAR(30),
+    PRIMARY KEY (id)
+ )default charset = utf8mb4   
+collate = utf8mb4_general_ci;
+
+ create table cliente(
+   id int not null auto_increment,
+   cliente VARCHAR(30),
+   nome VARCHAR(30),
+   telefone VARCHAR(30),
+    PRIMARY KEY (id)
+ )default charset = utf8mb4   
+collate = utf8mb4_general_ci;
+
+create table vendas(
+   id int not null auto_increment,
+   venda VARCHAR(30),
+   cliente VARCHAR(30),
+   produto VARCHAR(30),
+   data_venda  VARCHAR(30),
+    PRIMARY KEY (id)
+ )default charset = utf8mb4   
+collate = utf8mb4_general_ci;
+
+/*10- Crie um banco de dados chamado Biblioteca. Crie três tabelas: Livros 
+(livro, titulo, autor), Autores (autor, nome, nacionalidade) e Emprestimos 
+(emprestimo, livro, usuario, data_emprestimo). */
+
+create database biblioteca
+default character set utf8mb4
+ default collate utf8mb4_general_ci;
+ 
+  use biblioteca;
+ 
+ create table livro(
+   id int not null auto_increment,
+   livro VARCHAR(30),
+   titulo VARCHAR(30),
+   autor VARCHAR(30),
+    PRIMARY KEY (id)
+ )default charset = utf8mb4   
+collate = utf8mb4_general_ci; 
+
+create table autores(
+   id int not null auto_increment,
+   autor VARCHAR(30),
+   nome VARCHAR(30),
+   nacionalidade VARCHAR(30),
+    PRIMARY KEY (id)
+ )default charset = utf8mb4   
+collate = utf8mb4_general_ci; 
+
+create table enprestimos(
+   id int not null auto_increment,
+   emprestimo VARCHAR(30),
+   livro VARCHAR(30),
+   usuario VARCHAR(30),
+   data_emprestimo varchar(30),
+    PRIMARY KEY (id)
+ )default charset = utf8mb4   
+collate = utf8mb4_general_ci; 
+
+ /*11-Crie um banco de dados chamado Universidade. Crie três tabelas: Cursos 
+(curso, nome, carga_horaria), Alunos (aluno, nome, email) e Matriculas 
+(matricula, aluno, curso, data_matricula).*/
+
+create database universidade
+default character set utf8mb4
+ default collate utf8mb4_general_ci;
+ 
+ use universidade;
+ 
+ create table cursos(
+   id int not null auto_increment,
+   curso VARCHAR(30),
+   nome VARCHAR(30),
+   carga_horaria VARCHAR(30),
+    PRIMARY KEY (id)
+ )default charset = utf8mb4   
+collate = utf8mb4_general_ci;
+
+create table alunos(
+   id int not null auto_increment,
+   aluno VARCHAR(30),
+   nome VARCHAR(30),
+   email VARCHAR(30),
+    PRIMARY KEY (id)
+ )default charset = utf8mb4   
+collate = utf8mb4_general_ci;
+
+ /*12-Crie um banco de dados chamado ClinicaMedica. Crie três tabelas: 
+Pacientes (paciente, nome, telefone), Medicos (medico, nome, 
+especialidade) e Consultas (consulta, paciente, medico, data_consulta). */
+
+create database clinicamedica
+default character set utf8mb4
+ default collate utf8mb4_general_ci;
+
+use clinicamedica;
+
+create table pacientes(
+   id int not null auto_increment,
+   paciente VARCHAR(30),
+   nome VARCHAR(30),
+   telefone VARCHAR(30),
+    PRIMARY KEY (id)
+ )default charset = utf8mb4   
+collate = utf8mb4_general_ci;  
+
+create table medicos(
+   id int not null auto_increment,
+   medico VARCHAR(30),
+   nome VARCHAR(30),
+   expecialidade VARCHAR(30),
+    PRIMARY KEY (id)
+ )default charset = utf8mb4   
+collate = utf8mb4_general_ci;  
+
+create table consulta(
+   id int not null auto_increment,
+   consulta VARCHAR(30),
+   paciente VARCHAR(30),
+   medico VARCHAR(30),
+   data_consulta VARCHAR(30),
+    PRIMARY KEY (id)
+ )default charset = utf8mb4   
+collate = utf8mb4_general_ci;
+
+/*13-Crie um banco de dados chamado SalaoBeleza. Crie três tabelas: 
+Clientes (cliente, nome, telefone), Servicos (servico, descricao, preco) e 
+Agendamentos (agendamento, cliente, servico, data_agendamento). */
+
+create database salaobeleza
+default character set utf8mb4
+ default collate utf8mb4_general_ci;
+ 
+ use salaobeleza;
+ 
+ create table clientes(
+   id int not null auto_increment,
+   cliente VARCHAR(30),
+   nome VARCHAR(30),
+   telefone VARCHAR(30),
+    PRIMARY KEY (id)
+ )default charset = utf8mb4   
+collate = utf8mb4_general_ci;
+
+create table servicos(
+   id int not null auto_increment,
+   cervico VARCHAR(30),
+   descricao VARCHAR(30),
+   preco VARCHAR(30),
+    PRIMARY KEY (id)
+ )default charset = utf8mb4   
+collate = utf8mb4_general_ci;
+
+create table agendamentos(
+   id int not null auto_increment,
+   agendamento varchar(30),
+   cliente varchar(30),
+   servico varchar(30),
+   data_agendamento varchar(30),
+   PRIMARY KEY (id)
+ )default charset = utf8mb4   
+collate = utf8mb4_general_ci;
+
+ /*14-Crie um banco de dados chamado LocadoraCarros. Crie três tabelas: 
+Veiculos (veiculo, modelo, placa), Clientes (cliente, nome, telefone) e 
+Reservas (reserva, cliente, veiculo, data_reserva). */
+
+create database locadoracarros
+default character set utf8mb4
+ default collate utf8mb4_general_ci;
+ 
+ use locadoracarros;
+ 
+ create table veiculos(
+   id int not null auto_increment,
+   veiculo varchar(30),
+   modelo varchar(30),
+   placa varchar(30),
+   PRIMARY KEY (id)
+ )default charset = utf8mb4   
+collate = utf8mb4_general_ci;
+
+create table clientes(
+   id int not null auto_increment,
+   cliente varchar(30),
+   nome varchar(30),
+   telefone varchar(30),
+   PRIMARY KEY (id)
+ )default charset = utf8mb4   
+collate = utf8mb4_general_ci;
+
+create table reservas(
+   id int not null auto_increment,
+   reserva varchar(30),
+   cliente varchar(30),
+   veiculo varchar(30),
+   data_reserva varchar(30),
+   PRIMARY KEY (id)
+ )default charset = utf8mb4   
+collate = utf8mb4_general_ci;
+
+/*15- Crie um banco de dados chamado LocadoraFilmes. Crie três tabelas: 
+Filmes (filme, titulo, genero), Clientes (cliente, nome, telefone) e Locacoes 
+(locacao, cliente, filme, data_locacao).*/
+
+create database locadorafilmes
+default character set utf8mb4
+ default collate utf8mb4_general_ci;
+ 
+  use locadorafilmes;
+
+create table filmes(
+   id int not null auto_increment,
+   filme varchar(30),
+   titulo varchar(30),
+   genero varchar(30),
+   PRIMARY KEY (id)
+ )default charset = utf8mb4   
+collate = utf8mb4_general_ci;
+
+create table clientes(
+   id int not null auto_increment,
+   cliente varchar(30),
+   nome varchar(30),
+   telefone varchar(30),
+   PRIMARY KEY (id)
+ )default charset = utf8mb4   
+collate = utf8mb4_general_ci;
+
+create table locacoes(
+   id int not null auto_increment,
+   locacao varchar(30),
+   cliente varchar(30),
+   filme varchar(30),
+   data_locacao varchar(30),
+   PRIMARY KEY (id)
+ )default charset = utf8mb4   
+collate = utf8mb4_general_ci;
+
+ /*16- Crie um banco de dados chamado OficinaMecanica. Crie três tabelas: 
+Clientes (cliente, nome, telefone), Veiculos (veiculo, modelo, placa, 
+cliente) e Servicos (servico, descricao, preco). */
+
+create database oficinamecanica
+default character set utf8mb4
+ default collate utf8mb4_general_ci;
+ 
+ use oficinamecanica;
+ 
+ create table clientes(
+   id int not null auto_increment,
+   cliente varchar(30),
+   nome varchar(30),
+   telefone varchar(30),
+   PRIMARY KEY (id)
+ )default charset = utf8mb4   
+collate = utf8mb4_general_ci;
+
+create table veiculos(
+   id int not null auto_increment,
+   veiculo varchar(30),
+   modelo varchar(30),
+   placa varchar(30),
+   cliente varchar(30),
+   PRIMARY KEY (id)
+ )default charset = utf8mb4   
+collate = utf8mb4_general_ci;
+
+create table servicos(
+   id int not null auto_increment,
+   servico varchar(30),
+   descricao varchar(30),
+   preco varchar(30),
+   PRIMARY KEY (id)
+ )default charset = utf8mb4   
+collate = utf8mb4_general_ci;
+
+ /*17- Crie um banco de dados chamado Hotel. Crie três tabelas: Hospedes 
+(hospede, nome, telefone), Quartos (quarto, numero, tipo) e Reservas 
+(reserva, hospede, quarto, data_entrada, data_saida).*/
+
+create database hospital
+default character set  utf8mb4
+default collate utf8mb4_general_ci;
+
+use hospital;
+
+create table hospedes(
+id int not null auto_increment,
+hospede varchar(30),
+nome varchar(30),
+telefone varchar(30),
+primary key (id) 
+)default charset = utf8mb4
+collate = utf8mb4_general_ci;
+
+create table quartos(
+id int not null auto_increment,
+quarto varchar(30),
+numero varchar(30),
+tipo varchar(30),
+primary key (id)
+)default charset = utf8mb4
+collate = utf8mb4_general_ci;
+
+create table reservas(
+id int not null auto_increment,
+reserva varchar(30),
+hospede varchar(30),
+quarto varchar(30),
+primary key (id)
+)default charset = utf8mb4
+collate = utf8mb4_general_ci;
+
+ /*18- Crie um banco de dados chamado Restaurante. Crie três tabelas: Clientes 
+(cliente, nome, telefone), Pratos (prato, nome, preco) e Pedidos (pedido, 
+cliente, prato, data_pedido).*/
+
+create database restaurante
+default character set  utf8mb4
+default collate utf8mb4_general_ci;
+
+use restaurante;
+
+create table clientes(
+id int  not null auto_increment,
+cliente varchar(30),
+nome varchar(30),
+telefone varchar(30),
+primary key (id)
+)default charset = utf8mb4
+collate = utf8mb4_general_ci;
+
+create table pratos(
+id int not null auto_increment,
+prato varchar(30),
+nome varchar(30),
+preco varchar(30),
+primary key (id)
+)default charset = utf8mb4
+collate = utf8mb4_general_ci;
+
+create table pedidos(
+id int not null auto_increment,
+pedido varchar(30),
+cliente varchar(30),
+prato varchar(30),
+data_pedido varchar(30),
+primary key (id)
+)default charset = utf8mb4
+collate = utf8mb4_general_ci;
+
+ /*19- Crie um banco de dados chamado Transportadora. Crie três tabelas: 
+Motoristas (motorista, nome, cnh), Veiculos (veiculo, placa, modelo) e 
+Entregas (entrega, motorista, veiculo, data_entrega).*/
+
+create database tranportadora
+default character set  utf8mb4
+default collate utf8mb4_general_ci;
+
+create table motoristas(
+id int not null auto_increment,
+motorista varchar(30),
+nome varchar(30),
+cnh varchar(30),
+primary key (id)
+)default charset = utf8mb4
+collate = utf8mb4_general_ci;
+
+create table veiculos(
+id int not null auto_increment,
+veiculo varchar(30),
+placa varchar(30),
+modelo varchar(30),
+primary key (id)
+)default charset = utf8mb4
+collate = utf8mb4_general_ci;
+
+create table entregas(
+id int not null auto_increment,
+entrega varchar(30),
+motorista varchar(30),
+veiculo varchar(30),
+data_entrega varchar(30),
+primary key (id)
+)default charset = utf8mb4
+collate = utf8mb4_general_ci;
+
+ /*20- Crie um banco de dados chamado AgenciaViagens. Crie três tabelas: 
+Clientes (cliente, nome, telefone), Pacotes (pacote, destino, preco) e 
+Reservas (reserva, cliente, pacote, data_reserva).*/
+
+create database agenciaviagens
+default character set  utf8mb4
+default collate utf8mb4_general_ci;
+
+use agenciaviagens;
+
+create table clientes(
+id int not null auto_increment,
+cliente varchar(30),
+nome varchar(30),
+telefone varchar(30),
+primary key (id)
+)default charset = utf8mb4
+collate = utf8mb4_general_ci;
+
+create table pacotes(
+id int not null auto_increment,
+pacote varchar(30),
+destino varchar(30),
+preco varchar(30),
+primary key (id)
+)default charset = utf8mb4
+collate = utf8mb4_general_ci;
+
+create table reservas(
+id int not null auto_increment,
+reserva varchar(30),
+cliente varchar(30),
+pacote varchar(30),
+data_reserva varchar(30),
+primary key (id)
+)default charset = utf8mb4
+collate = utf8mb4_general_ci;
